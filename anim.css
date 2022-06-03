@@ -1,5 +1,6 @@
 :root {
-  --color: hsl(225, 50%, 50%);
+  --bg: #141414;
+  --text: #ffd024;
   font-size: 20px;
 }
 
@@ -12,5 +13,37 @@
 body {
   font-size: 1rem;
   font-family: sans-serif;
+  background-color: var(--bg);
+  overflow: hidden;
 }
 
+.wrapper {
+  display: flex;
+  height: 100%;
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 250px;
+}
+
+.scroll-text {
+  color: var(--text);
+  font-size: 2.5vw;
+  font-weight: bold;
+  text-align: justify;
+  line-height: 1.5em;
+  position: relative;
+  animation-name: scroll;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.scroll-text h1, h2 {
+  text-align: center;
+  padding-bottom: 35px;
+}
+
+@keyframes scroll {
+  from { top: 0; }
+  to { top: -3000px; }
+}
