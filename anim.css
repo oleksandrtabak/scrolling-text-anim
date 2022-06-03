@@ -15,6 +15,8 @@ body {
   font-family: sans-serif;
   background-color: var(--bg);
   overflow: hidden;
+  margin-top: 40%;
+  position: relative;
 }
 
 .wrapper {
@@ -22,7 +24,8 @@ body {
   height: 100%;
   width: 60%;
   margin: 0 auto;
-  padding-top: 250px;
+  /* 3Д перспектива */
+  perspective: 450px;
 }
 
 .scroll-text {
@@ -44,6 +47,15 @@ body {
 }
 
 @keyframes scroll {
-  from { top: 0; }
-  to { top: -3000px; }
+  from { 
+    top: 0; 
+    transform: translateZ(0) rotateX(25deg); 
+  }
+
+  to { 
+    top: -3000px; 
+    /* Ніби віддаляємо текст від екрану */
+    transform: translateZ(-1500px) rotateX(27deg); 
+  }
 }
+
